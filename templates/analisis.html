@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+    <title>Document</title>
+</head>
+<body>
+    {% if files %}
+    <script>
+        var urls = []
+        urls.push("{{ url_for('static', filename='files/by_hours.csv') }}")
+        urls.push("{{ url_for('static', filename='files/days.csv') }}")
+        urls.forEach(url => {
+            var iframe = document.createElement('iframe'); iframe.style.visibility = 'collapse';
+            iframe.style.visibility = 'collapse';
+            iframe.src = url;
+            document.body.append(iframe);
+            setTimeout(() => iframe.remove(), 2000);
+        });
+    </script>
+    {% endif %}
+
+
+
+   
+    <!-- <h1>Datos</h1>
+    <p>{{ data.day }}</p> -->
+</body>
+</html>

@@ -1,0 +1,3 @@
+day,max-Temperature(°C),min-Temperature(°C),mean-Temperature(°C),sd-Temperature(°C),max-Relative humidity(%),min-Relative humidity(%),mean-Relative humidity(%),sd-Relative humidity(%),max-Carbon dioxide(ppm),min-Carbon dioxide(ppm),mean-Carbon dioxide(ppm),sd-Carbon dioxide(ppm)
+18,28.71,19.53,23.717272727272732,2.893458029028679,45.59,23.43,33.87272727272727,7.0229717302499575,385.76,356.96,371.5315909090909,6.837012452132376
+19,19.43,16.24,17.34090909090909,0.8098565778998631,52.89,45.72,50.8,1.9405888758789651,381.53,361.38,370.1878181818182,4.855339439981629

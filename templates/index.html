@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+    <title>Analisis de datos</title> 
+</head>
+<body>
+    <nav>
+
+    </nav>
+    <div class="container">
+        <h1>Analizar datos</h1>
+        <ul>
+            <li><p>Selecciona un archivo csv</p></li>
+            <li><p>Se descargaran dos archivos automaticamente (datos analizados por dia y por hora)</p></li>
+        </ul>
+        
+        
+        <form method="POST" action="" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    {% if files %}
+    <script>
+        var urls = []
+        urls.push("{{ url_for('static', filename='files/by_hours.csv') }}")
+        urls.push("{{ url_for('static', filename='files/days.csv') }}")
+        urls.forEach(url => {
+            var iframe = document.createElement('iframe'); iframe.style.visibility = 'collapse';
+            iframe.style.visibility = 'collapse';
+            iframe.src = url;
+            document.body.append(iframe);
+            setTimeout(() => iframe.remove(), 2000);
+        });
+    </script>
+    {% endif %}
+</body>
+</html>
